@@ -16,6 +16,16 @@
 			/*			background-color: rgba(0,0,0,0.8);*/
 
 			pointer-events: none;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			-webkit-box-align: center;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+			/* align horizontal */
 		}
 	</style>
 </head>
@@ -24,47 +34,73 @@
 	<script src="//povdocs.github.io/webvr-starter-kit/build/vr.js"></script>
 
 	<script type="text/javascript">
+		var boxCheck = 0;
+		var lookingAtBox = true;
 		VR.panorama({
-			src: 'fartower.jpg',
+			src: 'assets/fartower.jpg',
 		});
 
-		//		var sky = VR.sky();
-		//		VR.animate(function (delta, time) {
-		//			var oldAzimuth = sky.azimuth;
-		//			sky.altitude = time / 20;
-		//			if (oldAzimuth !== sky.azimuth) {
-		//				console.log(sky.azimuth);
-		//			}
-		//			if (sky.altitude % 360 < 3) {
-		//				document.getElementById('overlay').style.backgroundColor = "rgba(0,0,0,0)";
-		//			} else {
-		//				document.getElementById('overlay').style.backgroundColor = "rgba(0,0,0," + ((sky.altitude % 360) - 4) + ")";
-		//			}
-		//		});
+		var box = VR.box()
+			.setScale(1.5, 1.4, 1.8)
+			.moveTo(-4.5, 1, 1.9);
 
 
-		//		var box = VR.box()
-		//			.setMaterial('brick-tiles')
-		//			.setScale(1.5, 1.4, 1.8)
-		//			.moveTo(-4.5, 1, 1.9);
-		//		var box = VR.box()
-		//			.setMaterial('brick-tiles')
-		//			.setScale(1.5, 1.4, 1.8)
-		//			.moveTo(-4.5, 1, 1.9);
-		//		var box = VR.box()
-		//			.setMaterial('brick-tiles')
-		//			.setScale(1.5, 1.4, 1.8)
-		//			.moveTo(-4.5, 1, 1.9);
-		//		var box = VR.box()
-		//			.setMaterial('brick-tiles')
-		//			.rotateY(0)
-		//			.setScale(4, 1.8, 2.9)
-		//			.moveTo(3.5, 0.8, 2.5);
-		//		VR.floor()
-		//			.setMaterial('stone');
+		var logo = VR.image('assets/logo.png')
+			.moveTo(5, 2, 1)
+			.rotateY(-0.9 * Math.PI / 2);
+
+		var text = VR.text({
+				wrap: 2,
+				font: '20pt Arial',
+				textAlign: 'center',
+				text: 'What you looking at?'
+			})
+			.moveTo(-1.5, 1.5, 3)
+			.rotateY(Math.PI / 3);
+
+		VR.animate(function () {
+			var facingVector = VR.camera.rotation
+			if (facingVector.x > -0.38421553170438544 && facingVector.x < 0.1736241091119658) { //BOX
+				if (facingVector.y > 0.86225331056782 && facingVector.y < 1.3436993138393813) {
+					if (facingVector.z > -0.169251896063133 && facingVector.z < 0.297862883856909) {
+						boxCheck++;
+
+						if (boxCheck > 120 && !lookingAtBox) {
+							text.show();
+							lookingAtBox = true;
+						}
+						return;
+					}
+				}
+			}
+
+			if (facingVector.x > 0.5188234357614023 && facingVector.x < 0.06904386990264605) { //Tower
+				if (facingVector.y > -0.13113006604526928 && facingVector.y < -0.2819638661101383) {
+					if (facingVector.z > 0.07452268731094627 && facingVector.z < 0.01923914980736962) {
+						boxCheck++;
+
+						if (boxCheck > 120 && !lookingAtBox) {
+							text.show();
+							lookingAtBox = true;
+						}
+						return;
+					}
+				}
+			}
+
+			lookingAtBox = false;
+			text.hide();
+			boxCheck = 0;
+		});
+
+		document.onclick = function () {
+			console.log(VR.camera.rotation);
+		}
 	</script>
 
-	<div id="overlay"></div>
+	<div id="overlay">
+		<div>x</div>
+	</div>
 </body>
 
 </html>

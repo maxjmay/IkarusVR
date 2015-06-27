@@ -1,24 +1,33 @@
-var imageWidth = $('#leftImg').css('width');
-var imageHeight = $('#leftImg').css('height');
+var imageWidth = parseInt($('#leftImg').css('width'));
+var imageHeight = parseInt($('#leftImg').css('height'));
 
-var screenWidth = $(window).width();
-var screenHeight = $(window).height();
+var screenWidth = parseInt($(window).width());
+var screenHeight = parseInt($(window).height());
 
 var maxWidth = imageWidth - screenWidth;
 var maxHeight = imageHeight - screenHeight;
 
 if (window.DeviceOrientationEvent) {
 	window.addEventListener('deviceorientation', function (eventData) {
-		var angle;
+		var angle, beta;
 		if (event.webkitCompassHeading) {
-			alpha = eventData.alpha;
-			gamma = eventData.gamma;
+			angle = eventData.webkitCompassHeading;
+		} else {
+			angle = eventData.alpha;
+			beta = eventData.beta;
+
 		}
-		if (angle) {		
-			$('#leftImg').css('left', '-' + ((alpha / 360) * maxWidth) + 'px');
+		if (angle) {
+			var percent = angle / 360;
+			var position = imageWidth * percent;
+			$('#leftImg').css('left', '-' + position + 'px');
+			$('#rightImg').css('left', '-' + position + 'px');
 		}
-		if (gamma) {
-			$('#leftImg').css('bottom', '-' + (((gamma + 90) / 180) * maxHeight) + 'px');
+		if (beta) {
+			var percent = beta / 360;
+			var position = imageHeight * percent;
+			$('#leftImg').css('top', '-' + position + 'px');
+			$('#rightImg').css('top', '-' + position + 'px');
 		}
 	});
 }
