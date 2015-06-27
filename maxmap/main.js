@@ -1,54 +1,24 @@
-var currentLeft = -702.5;
-var currentTop = -225;
+var imageWidth = $('#leftImg').css('width');
+var imageHeight = $('#leftImg').css('height');
 
-//$("#mapView").mousemove(function (event) {
-//	var newX = event.pageX;
-//	var newY = event.pageY;
-//	
-//	$("#leftImg").css('left', '-' + (newX / 2) + 'px');
-//	$("#leftImg").css('top', '-' + (newY / 2) + 'px');
-//	
-//	$("#rightImg").css('left', '-' + (newX / 2) + 'px');
-//	$("#rightImg").css('top', '-' + (newY / 2) + 'px');
-//});
+var screenWidth = $(window).width();
+var screenHeight = $(window).height();
 
-window.ondevicemotion = function (event) {
+var maxWidth = imageWidth - screenWidth;
+var maxHeight = imageHeight - screenHeight;
 
-	//	if (event.accelerationIncludingGravity.x > 0) {
-	//		if (currentLeft - 1 < -1405) {
-	//			currentLeft = -1405;
-	//		} else {
-	//			currentLeft--;
-	//		}
-	//	}
-	//
-	//	if (event.accelerationIncludingGravity.x < 0) {
-	//		if (currentLeft + 1 > 0) {
-	//			currentLeft = 0;
-	//		} else {
-	//			currentLeft++;
-	//		}
-	//	}
-
-	if (event.accelerationIncludingGravity.y > 0) {
-		if (currentTop - 1 < -440) {
-			currentTop = -440;
-		} else {
-			currentTop--;
+if (window.DeviceOrientationEvent) {
+	window.addEventListener('deviceorientation', function (eventData) {
+		var angle;
+		if (event.webkitCompassHeading) {
+			alpha = eventData.alpha;
+			gamma = eventData.gamma;
 		}
-	}
-
-	if (event.accelerationIncludingGravity.y < 0) {
-		if (currentTop + 1 > 0) {
-			currentTop = 0;
-		} else {
-			currentTop++;
+		if (angle) {		
+			$('#leftImg').css('left', '-' + ((alpha / 360) * maxWidth) + 'px');
 		}
-	}
-
-	$("#leftImg").css('left', currentLeft + 'px');
-	$("#leftImg").css('top', currentTop + 'px');
-
-	$("#rightImg").css('left', currentLeft + 'px');
-	$("#rightImg").css('top', currentTop + 'px');
+		if (gamma) {
+			$('#leftImg').css('top', '-' + (((gamma + 90) / 180) * maxHeight) + 'px');
+		}
+	});
 }
