@@ -7,15 +7,24 @@ var screenHeight = parseInt($(window).height());
 var maxWidth = imageWidth - screenWidth;
 var maxHeight = imageHeight - screenHeight;
 
+var currentAngle = 0;
+
 if (window.DeviceOrientationEvent) {
 	window.addEventListener('deviceorientation', function (eventData) {
 		var angle, beta;
 		if (event.webkitCompassHeading) {
 			angle = eventData.webkitCompassHeading;
 		} else {
+			currentAngle = eventData.alpha;
 			angle = eventData.alpha;
 			beta = eventData.beta;
-
+			if (angle < 60 && angle > 45) {
+				setTimeout(function () {
+					if (currentAngle < 60 && currentAngle > 45) {
+						location.href = 'http://www.darrengilbert.rocks/ikaros/index.html';
+					}
+				}, 3000);
+			}
 		}
 		if (angle) {
 			var percent = angle / 360;
