@@ -18,7 +18,7 @@ if (window.DeviceOrientationEvent) {
 			$('#leftImg').css('left', '-' + ((alpha / 360) * maxWidth) + 'px');
 		}
 		if (gamma) {
-			$('#leftImg').css('top', '-' + (((gamma + 90) / 180) * maxHeight) + 'px');
+			$('#leftImg').css('bottom', '-' + (((gamma + 90) / 180) * maxHeight) + 'px');
 		}
 	});
 }
