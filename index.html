@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="description" content="ikaros VR">
+	<meta charset="utf-8">
+	<title>ikaros VR</title>
+
+	<style>
+		#overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			/*			background-color: rgba(0,0,0,0.8);*/
+
+			pointer-events: none;
+		}
+	</style>
+</head>
+
+<body>
+	<script src="//povdocs.github.io/webvr-starter-kit/build/vr.js"></script>
+
+	<script type="text/javascript">
+		VR.panorama({
+			src: 'fartower.jpg',
+		});
+
+		//		var sky = VR.sky();
+		//		VR.animate(function (delta, time) {
+		//			var oldAzimuth = sky.azimuth;
+		//			sky.altitude = time / 20;
+		//			if (oldAzimuth !== sky.azimuth) {
+		//				console.log(sky.azimuth);
+		//			}
+		//			if (sky.altitude % 360 < 3) {
+		//				document.getElementById('overlay').style.backgroundColor = "rgba(0,0,0,0)";
+		//			} else {
+		//				document.getElementById('overlay').style.backgroundColor = "rgba(0,0,0," + ((sky.altitude % 360) - 4) + ")";
+		//			}
+		//		});
+
+
+		//		var box = VR.box()
+		//			.setMaterial('brick-tiles')
+		//			.setScale(1.5, 1.4, 1.8)
+		//			.moveTo(-4.5, 1, 1.9);
+		//		var box = VR.box()
+		//			.setMaterial('brick-tiles')
+		//			.setScale(1.5, 1.4, 1.8)
+		//			.moveTo(-4.5, 1, 1.9);
+		//		var box = VR.box()
+		//			.setMaterial('brick-tiles')
+		//			.setScale(1.5, 1.4, 1.8)
+		//			.moveTo(-4.5, 1, 1.9);
+		//		var box = VR.box()
+		//			.setMaterial('brick-tiles')
+		//			.rotateY(0)
+		//			.setScale(4, 1.8, 2.9)
+		//			.moveTo(3.5, 0.8, 2.5);
+		//		VR.floor()
+		//			.setMaterial('stone');
+	</script>
+
+	<div id="overlay"></div>
+</body>
+
+</html>
