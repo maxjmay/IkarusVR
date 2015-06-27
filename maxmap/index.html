@@ -5,14 +5,21 @@
 	<meta name="description" content="ikaros VR">
 	<meta charset="utf-8">
 	<title>ikaros VR</title>
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
-<body id="mapView" style="width: 100%; height: 100%; margin: 0px;  overflow: hidden;">
-	<div id="leftScreen" style="width: 50%; height: 100%; overflow: hidden; display: inline-block; float: left; overflow: hidden;">
-		<img id="leftImg" style="width: 4215px; height: 1350px; position: relative; overflow: hidden; left: -702.5px; top: -225px;" src="../assets/map.png" style="width: 200%; height: 200%;">
+<body id="mapView" style="width: 100%; height: 100%; margin: 0px;">
+	<div class="screen" style="width: 50%; height: 100%; overflow: hidden; display: inline-block; float: left;">
+		<div class="room" style="width: 4215px; height: 1350px; position: relative; overflow: hidden; left: -702.5px; top: -225px;">
+			<i class="fa fa-bed" style="  top: 700px; left: 2000px; position: absolute; color: #FFF; font-size: 45px;"></i>
+			<img id="img" style="width: 100%; height: 100%;" src="../assets/map.png">
+		</div>
 	</div>
-	<div id="rightScreen" style="width: 50%; height: 100%; overflow: hidden; display: inline-block; float: right; overflow: hidden;">
-		<img id="rightImg" style="width: 4215px; height: 1350px; position: relative; overflow: hidden; left: -702.5px; top: -225px;" src="../assets/map.png" style="width: 200%; height: 200%;">
+	<div class="screen" style="width: 50%; height: 100%; overflow: hidden; display: inline-block; float: right;">
+		<div class="room" style="width: 4215px; height: 1350px; position: relative; overflow: hidden; left: -702.5px; top: -225px;">
+			<img class="img" style="width: 100%; height: 100%;" src="../assets/map.png">
+		</div>
 	</div>
 		
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>

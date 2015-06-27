@@ -1,5 +1,5 @@
-var imageWidth = parseInt($('#leftImg').css('width'));
-var imageHeight = parseInt($('#leftImg').css('height'));
+var imageWidth = parseInt($('.room').css('width'));
+var imageHeight = parseInt($('.room').css('height'));
 
 var screenWidth = parseInt($(window).width());
 var screenHeight = parseInt($(window).height());
@@ -20,14 +20,14 @@ if (window.DeviceOrientationEvent) {
 		if (angle) {
 			var percent = angle / 360;
 			var position = imageWidth * percent;
-			$('#leftImg').css('left', '-' + position + 'px');
-			$('#rightImg').css('left', '-' + position + 'px');
+			$('.room').css('left', '-' + position + 'px');
+			$('.room').css('left', '-' + position + 'px');
 		}
 		if (beta) {
 			var percent = beta / 360;
 			var position = imageHeight * percent;
-			$('#leftImg').css('top', '-' + position + 'px');
-			$('#rightImg').css('top', '-' + position + 'px');
+			$('.room').css('top', '-' + position + 'px');
+			$('.room').css('top', '-' + position + 'px');
 		}
 	});
 }
