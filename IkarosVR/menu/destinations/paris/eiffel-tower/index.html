@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="description" content="ikaros VR">
+	<meta charset="utf-8">
+	<title>ikaros VR</title>
+
+	<style>
+		#overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			/*			background-color: rgba(0,0,0,0.8);*/
+
+			pointer-events: none;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			-webkit-box-align: center;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+			/* align horizontal */
+		}
+	</style>
+</head>
+
+<body>
+	<script src="http://povdocs.github.io/webvr-starter-kit/build/vr.js"></script>
+
+	<script type="text/javascript">
+		var boxCheck = 0;
+		var lookingAtBox = true;
+		VR.panorama({
+			src: '../../../../assets/fartower.jpg',
+		});
+
+//		var box = VR.box()
+//			.setScale(1.5, 1.4, 1.8)
+//			.moveTo(-4.5, 1, 1.9);
+
+
+		var logo = VR.image('../../../../assets/logo.png')
+			.moveTo(5, 2, 1)
+			.rotateY(-0.9 * Math.PI / 2);
+
+		var text = VR.text({
+				wrap: 2,
+				font: '20pt Arial',
+				textAlign: 'center',
+				text: 'What you looking at?'
+			})
+			.moveTo(-1.5, 1.5, 3.2)
+			.rotateY(Math.PI / 3);
+
+		var towerText = VR.text({
+				wrap: 2,
+				font: '20pt Arial',
+				textAlign: 'center',
+				text: 'Le Eiffel Tower'
+			})
+			.moveTo(0.3, 1.5, 3)
+			.rotateY(Math.PI / 0.01);
+
+		VR.animate(function () {
+			var facingVector = VR.camera.rotation
+			if (facingVector.x > -0.38421553170438544 && facingVector.x < 0.1736241091119658) { //BOX
+				if (facingVector.y > 0.86225331056782 && facingVector.y < 1.3436993138393813) {
+					//if (facingVector.z > -0.169251896063133 && facingVector.z < 0.297862883856909) {
+						boxCheck++;
+
+						if (boxCheck > 50 && !lookingAtBox) {
+							text.show();
+							lookingAtBox = true;
+						}
+						return;
+					//}
+				}
+			}
+
+			if (facingVector.x > 0.12220574353158782 && facingVector.x < 0.53174773170839) { //Tower
+				if (facingVector.y > -0.08052080809699 && facingVector.y < -0.00498652802397181) {
+					//if (facingVector.z > 0.038183967127388155 && facingVector.z < 0.03838832080767472) {
+					boxCheck++;
+
+					if (boxCheck > 50 && !lookingAtBox) {
+						towerText.show();
+						lookingAtBox = true;
+					}
+					return;
+					//}
+				}
+			}
+
+			lookingAtBox = false;
+			text.hide();
+			towerText.hide();
+			boxCheck = 0;
+		});
+
+		document.onclick = function () {
+			console.log(VR.camera.rotation);
+		}
+	</script>
+
+	<div id="overlay">
+		<div>x</div>
+	</div>
+</body>
+
+</html>

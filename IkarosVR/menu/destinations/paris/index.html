@@ -1,0 +1,80 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../libs/Semantic-UI-1.12.3/dist/semantic.min.css">
+</head>
+
+<body style="background-image: url('../../../assets/flight.jpg'); background-repeat:no-repeat; background-size:cover; background-position: center;">
+	<div style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.68); text-align: center; padding: 5%;">
+		<div style="width: 100%; text-align: right;">
+			<a href="../../index.html">
+				<div class="ui button">
+					Back
+				</div>
+			</a>
+		</div>
+		<div class="ui cards" style="margin: 0px 12%;">
+			<div class="card">
+				<a href="eiffel-tower/index.html" class="image">
+					<img style="height: 200px;" src="../../../assets/paris-eiffeltower.jpg">
+				</a>
+				<div class="content">
+					<a class="header">Le Tour Eiffel <i class="volume up icon"></i></a>
+					<div class="meta">
+						<a>Attraction</a>
+					</div>
+					<div class="description">
+						Le Tour Eiffel was built for the 1889 World's Fair, becoming a global cultural icon for Paris. Opening hours: 09:00 to 00:00.
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<a href="destinations/paris/index.html" class="image">
+					<img style="height: 200px;" src="../../../assets/paris-louvres.jpeg">
+				</a>
+				<div class="content">
+					<a class="header">Mus&#233;e du Louvre <i class="volume up icon"></i></a>
+					<div class="meta">
+						<a>Attraction</a>
+					</div>
+					<div class="description">
+						Mus&#233;e du Louvre
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<a href="destinations/dubai/index.html" class="image">
+					<img style="height: 200px;" src="../../../assets/paris-disneyland.jpg">
+				</a>
+				<div class="content">
+					<span class="header">Disneyland</span>
+					<div class="meta">
+						<a>Attraction</a>
+					</div>
+					<div class="description">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="../../../libs/Semantic-UI-1.12.3/dist/semantic.min.js"></script>
+
+	<script>
+		$.ajax({
+			url: "https://api-hackathon.getyourguide.com/1/tours?currency=USD&cnt_language=en&q=London",
+			headers: {
+				"X-ACCESS-TOKEN": "uArP2VGYjjS2XADegsLqUciS5nFj8uEwNgaQoHqB0BFBpX8n",
+			},
+			type: "GET",
+			success: function (data) {
+				console.log(data);
+			}
+		});
+	</script>
+</body>
+
+</html>
