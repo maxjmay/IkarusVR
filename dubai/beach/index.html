@@ -37,17 +37,12 @@
 		var boxCheck = 0;
 		var lookingAtBox = true;
 		VR.panorama({
-			src: 'assets/dubai_1.jpg',
+			src: 'assets/dubai_3.jpg',
 		});
 
 //		var box = VR.box()
 //			.setScale(1.5, 1.4, 1.8)
 //			.moveTo(-4.5, 1, 1.9);
-
-
-		var logo = VR.image('assets/logo.png')
-			.moveTo(5, 2, 1)
-			.rotateY(-0.9 * Math.PI / 2);
 
 //		var text = VR.text({
 //				wrap: 2,
@@ -69,20 +64,6 @@
 
 		VR.animate(function () {
 			var facingVector = VR.camera.rotation
-//			if (facingVector.x > -0.38421553170438544 && facingVector.x < 0.1736241091119658) { //BOX
-//				if (facingVector.y > 0.86225331056782 && facingVector.y < 1.3436993138393813) {
-//					//if (facingVector.z > -0.169251896063133 && facingVector.z < 0.297862883856909) {
-//						boxCheck++;
-//
-//						if (boxCheck > 50 && !lookingAtBox) {
-//							text.show();
-//							lookingAtBox = true;
-//						}
-//						return;
-//					//}
-//				}
-//			}
-
 			if (facingVector.x > 0.12220574353158782 && facingVector.x < 0.53174773170839) { //Tower
 				if (facingVector.y > -0.08052080809699 && facingVector.y < -0.00498652802397181) {
 					//if (facingVector.z > 0.038183967127388155 && facingVector.z < 0.03838832080767472) {

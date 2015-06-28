@@ -18,13 +18,14 @@ if (window.DeviceOrientationEvent) {
 			currentAngle = eventData.alpha;
 			angle = eventData.alpha;
 			beta = eventData.beta;
-			if (angle < 60 && angle > 45) {
-				setTimeout(function () {
-					if (currentAngle < 60 && currentAngle > 45) {
-						location.href = 'http://www.darrengilbert.rocks/ikaros/index.html';
-					}
-				}, 3000);
-			}
+		}
+		console.log(angle);
+		if (angle < 70 && angle > 60) {
+			setTimeout(function () {
+				if (angle < 70 && angle > 60) {
+					location.href = 'http://www.darrengilbert.rocks/ikaros/index.html';
+				}
+			}, 3000);
 		}
 		if (angle) {
 			var percent = angle / 360;
