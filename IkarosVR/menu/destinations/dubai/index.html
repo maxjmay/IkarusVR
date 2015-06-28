@@ -24,7 +24,9 @@
 						<a>Attraction</a>
 					</div>
 					<div class="description">
-						Opening Times:, Cost:
+						<span style="font-weight: bold; display: inline-block;" class="ferrariName"></span>
+						<span style="display: inline-block;" class="ferrariDesc"></span>
+						<span style="display: inline-block;" class="ferrariPrice"></span>
 					</div>
 				</div>
 			</div>
@@ -38,21 +40,25 @@
 						<a>Shopping</a>
 					</div>
 					<div class="description">
-						The mosque accommodates 1200 worshippers and allows non-Muslim visitors in the minaret only.
+						<span style="font-weight: bold; display: inline-block;" class="dubaiMallName"></span>
+						<span style="display: inline-block;" class="dubaiMallDesc"></span>
+						<span style="display: inline-block;" class="dubaiMallPrice"></span>
 					</div>
 				</div>
 			</div>
 			<div class="card">
 				<a href="destinations/dubai/index.html" class="image">
-					<img style="height: 200px;" src="../../../assets/dubai-hotel.jpg">
+					<img style="height: 200px;" src="../../../assets/dubai-burj.jpeg">
 				</a>
 				<div class="content">
-					<a class="header">Burj Al Arab Jumeirah <i class="volume up icon"></i></a>
+					<a class="header">Burj Khalifa <i class="volume up icon"></i></a>
 					<div class="meta">
-						<a>Hotel</a>
+						<a>Attraction</a>
 					</div>
 					<div class="description">
-						Cost for a standard double room
+						<span style="font-weight: bold; display: inline-block;" class="burjTourName"></span>
+						<span style="display: inline-block;" class="burjTourDesc"></span>
+						<span style="display: inline-block;" class="burjTourPrice"></span>
 					</div>
 				</div>
 			</div>
@@ -62,6 +68,327 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 	<script src="../../../libs/Semantic-UI-1.12.3/dist/semantic.min.js"></script>
+
+	<script>
+		var burjData = {
+			"_metadata": {
+				"descriptor": "GetYourGuide AG",
+				"apiVersion": "1",
+				"method": "getTourByQueryAction",
+				"date": "2015-06-28T09:36:22Z",
+				"status": "OK",
+				"query": "cnt_language=en&currency=USD&q=Burj",
+				"availableLanguages": [
+            "es",
+            "tr",
+            "zh",
+            "en",
+            "fr",
+            "de",
+            "it",
+            "ja",
+            "ar",
+            "ru",
+            "hi",
+            "fa",
+            "pt"
+        ],
+				"exchange": {
+					"rate": 0.8962318301,
+					"currency": "GBP"
+				},
+				"totalCount": 30,
+				"limit": 10,
+				"offset": 0
+			},
+			"data": {
+				"tours": [
+					{
+						"tour_id": 12739,
+						"tour_code": "burjkhalifa",
+						"cond_language": [],
+						"title": "Burj Khalifa Ticket: World's Tallest Skyscraper, Dubai",
+						"abstract": "Come and stand on top of the world's tallest building! Be amazed by the incredible technological wonders of this building, and enjoy an incredible 360-degree view of downtown Dubai.",
+						"bestseller": false,
+						"overall_rating": 4.5359,
+						"number_of_ratings": 1032,
+						"pictures": [
+							{
+								"id": 217793,
+								"description": "",
+								"url": "http://img-hackathon.getyourguide.com/img/tour_img-217793-[format_id].jpg",
+								"ssl_url": "https://img-hackathon.getyourguide.com/img/tour_img-217793-[format_id].jpg"
+                    }
+                ],
+						"coordinates": {
+							"lat": 25.19973,
+							"long": 55.27761
+						},
+						"price": {
+							"values": {
+								"amount": '32.30'
+							},
+							"description": "individual"
+						},
+						"categories": [
+							{
+								"category_id": 157,
+								"name": "Sightseeing Attraction Tickets",
+								"parent_id": 123
+                    }
+                ],
+						"locations": [
+							{
+								"location_id": 173,
+								"type": "CITY",
+								"name": "Dubai",
+								"english_name": "Dubai",
+								"country": "AE",
+								"coordinates": {
+									"lat": 25.26944,
+									"long": 55.308651
+								},
+								"viewport": {
+									"sw_lat": 24.9188,
+									"sw_long": 55.028641,
+									"ne_lat": 25.32781,
+									"ne_long": 55.55286
+								}
+                    }
+                ],
+						"url": "http://www.getyourguide.com/dubai-l173/burj-khalifa-tickets-dubai-t12739/",
+						"durations": [
+							{
+								"duration": 1.5,
+								"unit": "hour"
+                    },
+							{
+								"duration": 2,
+								"unit": "hour"
+                    }
+                ]
+            }
+        ]
+			}
+		};
+
+		var mallData = {
+			"_metadata": {
+				"descriptor": "GetYourGuide AG",
+				"apiVersion": "1",
+				"method": "getTourByQueryAction",
+				"date": "2015-06-28T09:47:46Z",
+				"status": "OK",
+				"query": "cnt_language=en&currency=USD&q=Dubai%20shopping",
+				"availableLanguages": [
+            "es",
+            "tr",
+            "zh",
+            "en",
+            "fr",
+            "de",
+            "it",
+            "ja",
+            "ar",
+            "ru",
+            "hi",
+            "fa",
+            "pt"
+        ],
+				"exchange": {
+					"rate": 0.8962318301,
+					"currency": "GBP"
+				},
+				"totalCount": 137,
+				"limit": 10,
+				"offset": 0
+			},
+			"data": {
+				"tours": [
+					{
+						"tour_id": 49021,
+						"tour_code": "Dubai",
+						"cond_language": [
+                    "es",
+                    "tr",
+                    "zh",
+                    "en",
+                    "fr",
+                    "de",
+                    "it",
+                    "ja",
+                    "ar",
+                    "ru",
+                    "hi",
+                    "fa"
+                ],
+						"title": "Dubai Hop-on Hop-off Bus Tour 24 or 48-Hour Ticket",
+						"abstract": "A hop-on hop-off bus tour is the best way to see the top sights of Dubai. With 41 stops around the city, you'll be connected to every major attraction. Enjoy free entrances to selected attractions. Go on a walking tour, night tour, and dhow cruise.",
+						"bestseller": false,
+						"overall_rating": 4.3947,
+						"number_of_ratings": 114,
+						"pictures": [
+							{
+								"id": 308675,
+								"url": "http://img-hackathon.getyourguide.com/img/tour_img-308675-[format_id].jpg",
+								"ssl_url": "https://img-hackathon.getyourguide.com/img/tour_img-308675-[format_id].jpg"
+                    }
+                ],
+						"coordinates": {
+							"lat": 25.2628171,
+							"long": 55.287036
+						},
+						"price": {
+							"values": {
+								"amount": '32.62',
+								"special": {
+									"original_price": 66,
+									"savings": 10
+								}
+							},
+							"description": "individual"
+						},
+						"categories": [
+							{
+								"category_id": 4,
+								"name": "Bus & Minivan Tours",
+								"parent_id": 2
+                    }
+                ],
+						"locations": [
+							{
+								"location_id": 173,
+								"type": "CITY",
+								"name": "Dubai",
+								"english_name": "Dubai",
+								"country": "AE",
+								"coordinates": {
+									"lat": 25.26944,
+									"long": 55.308651
+								},
+								"viewport": {
+									"sw_lat": 24.9188,
+									"sw_long": 55.028641,
+									"ne_lat": 25.32781,
+									"ne_long": 55.55286
+								}
+                    }
+                ],
+						"url": "http://www.getyourguide.com/dubai-l173/dubai-hop-on-hop-off-sightseeing-bus-tour-t49021/",
+						"durations": [
+							{
+								"duration": 24,
+								"unit": "hour"
+                    },
+							{
+								"duration": 48,
+								"unit": "hour"
+                    }
+                ]
+            }
+        ]
+			}
+		};
+
+		var ferrariData = {
+			"_metadata": {
+				"descriptor": "GetYourGuide AG",
+				"apiVersion": "1",
+				"method": "getTourByQueryAction",
+				"date": "2015-06-28T09:53:49Z",
+				"status": "OK",
+				"query": "cnt_language=en&currency=GBP&q=ferrari",
+				"availableLanguages": [
+            "en",
+            "de"
+        ],
+				"exchange": {
+					"rate": 1.3867403269,
+					"currency": "GBP"
+				},
+				"totalCount": 4,
+				"limit": 10,
+				"offset": 0
+			},
+			"data": {
+				"tours": [
+					{
+						"tour_id": 37580,
+						"tour_code": "Tickets",
+						"cond_language": [],
+						"title": "Abu Dhabi: Ferrari World Tickets",
+						"abstract": "With 1-day tickets to Ferrari World Abu Dhabi you can explore the theme park with skip-the-line entrance. Experience the fascinating world of fast cars, enjoy the spectacular attractions, and be inspired by the fast-paced adventures.",
+						"bestseller": false,
+						"overall_rating": 4.4211,
+						"number_of_ratings": 19,
+						"pictures": [
+							{
+								"id": 205429,
+								"description": "Ferrari World Abu Dhabi 1-Day Tickets",
+								"url": "http://img-hackathon.getyourguide.com/img/tour_img-205429-[format_id].jpg",
+								"ssl_url": "https://img-hackathon.getyourguide.com/img/tour_img-205429-[format_id].jpg"
+                    }
+                ],
+						"coordinates": {
+							"lat": 24.4837956,
+							"long": 54.6070528
+						},
+						"price": {
+							"values": {
+								"amount": '50.10'
+							},
+							"description": "individual"
+						},
+						"categories": [
+							{
+								"category_id": 131,
+								"name": "Theme Parks & Amusement Parks",
+								"parent_id": 123
+                    }
+                ],
+						"locations": [
+							{
+								"location_id": 494,
+								"type": "CITY",
+								"name": "Abu Dhabi",
+								"english_name": "Abu Dhabi",
+								"country": "AE",
+								"coordinates": {
+									"lat": 24.44393,
+									"long": 54.419048
+								},
+								"viewport": {
+									"sw_lat": 24.23114,
+									"sw_long": 54.300152,
+									"ne_lat": 24.541241,
+									"ne_long": 54.746841
+								}
+                    }
+                ],
+						"url": "http://www.getyourguide.com/abu-dhabi-l494/ferrari-world-abu-dhabi-1-day-tickets-t37580/",
+						"durations": [
+							{
+								"duration": 1,
+								"unit": "day"
+                    }
+                ]
+            }
+        ]
+			}
+		}
+
+		$('.burjTourName').html(burjData.data.tours[0].title);
+		$('.burjTourDesc').html(burjData.data.tours[0].abstract);
+		$('.burjTourPrice').html('&#163;' + burjData.data.tours[0].price.values.amount);
+
+		$('.dubaiMallName').html(mallData.data.tours[0].title);
+		$('.dubaiMallDesc').html(mallData.data.tours[0].abstract);
+		$('.dubaiMallPrice').html('&#163;' + mallData.data.tours[0].price.values.amount);
+		
+		$('.ferrariName').html(ferrariData.data.tours[0].title);
+		$('.ferrariDesc').html(ferrariData.data.tours[0].abstract);
+		$('.ferrariPrice').html('&#163;' + ferrariData.data.tours[0].price.values.amount);
+	</script>
 </body>
 
 </html>

@@ -14,10 +14,13 @@
 			</a>
 		</div>
 		<div style="width: 100%; text-align: center; margin-top:20px; position: relative;">
-			<div style="position: absolute; top: 10px; right: 10px;" class="ui button">
-				<i class="eye icon"></i>
+			<div class="switchVideo" style="width: 100%;">
+				<div onclick="loadAnotherVideo();" style="width: 45px; padding: 0px; margin: 0px; height: 30px; text-align: center; margin-bottom: 20px;" class="ui button">
+					<i style="margin: 8px auto;" class="eye icon"></i>
+				</div>
 			</div>
-			<video style="width: 80%; height: auto;" controls>
+
+			<video autoplay class="video" style="width: 80%; height: auto;" controls>
 				<source src="../../../assets/airport-transfer-normal.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 			</video>
@@ -28,11 +31,29 @@
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 	<script src="../../../libs/Semantic-UI-1.12.3/dist/semantic.min.js"></script>
 	<script>
+		var source = '../../../assets/airport-transfer-normal.mp4';
+
+		$.browser.device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+
 		function loadAnotherVideo() {
 			var video = document.getElementsByTagName('video')[0];
 			var sources = video.getElementsByTagName('source');
-			sources[0].src = '../../../assets/airport-transfer-vr.mp4';
-			video.load();
+			if (source == '../../../assets/airport-transfer-normal.mp4') {
+				sources[0].src = '../../../assets/airport-transfer-vr.mp4';
+				video.load();
+				source = '../../../assets/airport-transfer-vr.mp4';
+				$('.video').play();
+			} else {
+				sources[0].src = '../../../assets/airport-transfer-normal.mp4';
+				video.load();
+				source = '../../../assets/airport-transfer-normal.mp4';
+				$('.video').play();
+			}
+		}
+
+		if ($.browser.device) {
+			loadAnotherVideo();
+			$('.switchVideo').hide();
 		}
 	</script>
 </body>

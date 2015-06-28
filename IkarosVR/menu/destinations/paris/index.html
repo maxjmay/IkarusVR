@@ -24,7 +24,9 @@
 						<a>Attraction</a>
 					</div>
 					<div class="description">
-						Le Tour Eiffel was built for the 1889 World's Fair, becoming a global cultural icon for Paris. Opening hours: 09:00 to 00:00.
+						<span style="font-weight: bold; display: inline-block;" class="eiffelTourName"></span>
+						<span style="display: inline-block;" class="eiffelTourDesc"></span>
+						<span style="display: inline-block;" class="eiffelTourPrice"></span>
 					</div>
 				</div>
 			</div>
@@ -38,7 +40,9 @@
 						<a>Attraction</a>
 					</div>
 					<div class="description">
-						Mus&#233;e du Louvre
+						<span style="font-weight: bold; display: inline-block;" class="louvreTourName"></span>
+						<span style="display: inline-block;" class="louvreTourDesc"></span>
+						<span style="display: inline-block;" class="louvreTourPrice"></span>
 					</div>
 				</div>
 			</div>
@@ -52,7 +56,9 @@
 						<a>Attraction</a>
 					</div>
 					<div class="description">
-
+						<span style="font-weight: bold; display: inline-block;" class="disneyTourName"></span>
+						<span style="display: inline-block;" class="disneyTourDesc"></span>
+						<span style="display: inline-block;" class="disneyTourPrice"></span>
 					</div>
 				</div>
 			</div>
@@ -64,16 +70,564 @@
 	<script src="../../../libs/Semantic-UI-1.12.3/dist/semantic.min.js"></script>
 
 	<script>
-		$.ajax({
-			url: "https://api-hackathon.getyourguide.com/1/tours?currency=USD&cnt_language=en&q=London",
-			headers: {
-				"X-ACCESS-TOKEN": "uArP2VGYjjS2XADegsLqUciS5nFj8uEwNgaQoHqB0BFBpX8n",
+		var eiffelTowerData = {
+			"_metadata": {
+				"descriptor": "GetYourGuide AG",
+				"apiVersion": "1",
+				"method": "getTourByQueryAction",
+				"date": "2015-06-28T09:08:34Z",
+				"status": "OK",
+				"query": "cnt_language=en&currency=USD&q=Eiffel",
+				"availableLanguages": [
+            "es",
+            "zh",
+            "cs",
+            "nl",
+            "en",
+            "fr",
+            "de",
+            "it",
+            "pt",
+            "ru",
+            "ja"
+        ],
+				"exchange": {
+					"rate": 0.8962318301,
+					"currency": "USD"
+				},
+				"totalCount": 34,
+				"limit": 10,
+				"offset": 0
 			},
-			type: "GET",
-			success: function (data) {
-				console.log(data);
+			"data": {
+				"tours": [
+					{
+						"tour_id": 39930,
+						"tour_code": "EIFFELENTRANCE",
+						"cond_language": [],
+						"title": "Paris: Eiffel Tower Skip-The-Line Reserved Entry Ticket",
+						"abstract": "Skip-the-line entry to the 2nd floor of the Eiffel Tower with a reserved entry time ticket. See the sights of Paris from the top of the tower, spending as much time as you like looking over the city and River Seine.",
+						"bestseller": false,
+						"overall_rating": 4.3481,
+						"number_of_ratings": 790,
+						"pictures": [
+							{
+								"id": 302635,
+								"url": "http://img-hackathon.getyourguide.com/img/tour_img-302635-[format_id].jpg",
+								"ssl_url": "https://img-hackathon.getyourguide.com/img/tour_img-302635-[format_id].jpg"
+                    }
+                ],
+						"coordinates": {
+							"lat": 48.8580562,
+							"long": 2.2993496
+						},
+						"price": {
+							"values": {
+								"amount": 41
+							},
+							"description": "individual"
+						},
+						"categories": [
+							{
+								"category_id": 157,
+								"name": "Sightseeing Attraction Tickets",
+								"parent_id": 123
+                    }
+                ],
+						"locations": [
+							{
+								"location_id": 16,
+								"type": "CITY",
+								"name": "Paris",
+								"english_name": "Paris",
+								"country": "FR",
+								"coordinates": {
+									"lat": 48.85693,
+									"long": 2.3412
+								},
+								"viewport": {
+									"sw_lat": 48.658291,
+									"sw_long": 2.08679,
+									"ne_lat": 49.04694,
+									"ne_long": 2.63791
+								}
+                    }
+                ],
+						"url": "http://www.getyourguide.com/paris-l16/eiffel-tower-tickets-skip-the-line-reserved-entry-t39930/",
+						"durations": [
+							{
+								"duration": 2,
+								"unit": "hour"
+                    }
+                ]
+            },
+					{
+						"tour_id": 3383,
+						"tour_code": "PS",
+						"cond_language": [
+                    "es",
+                    "zh",
+                    "cs",
+                    "nl",
+                    "en",
+                    "fr",
+                    "de",
+                    "it",
+                    "pt",
+                    "ru",
+                    "ja"
+                ],
+						"title": "Paris: Eiffel Tower, Seine Cruise, and City Tour",
+						"abstract": "Experience Paris with this combination tour. Start off with a bus tour of Paris and then enjoy a Seine River cruise. Finally, head to the Eiffel Tower’s 2nd floor for spectacular views of the city – with priority entrance!",
+						"bestseller": false,
+						"overall_rating": 3.8797,
+						"number_of_ratings": 715,
+						"pictures": [
+							{
+								"id": 311041,
+								"url": "http://img-hackathon.getyourguide.com/img/tour_img-311041-[format_id].jpg",
+								"ssl_url": "https://img-hackathon.getyourguide.com/img/tour_img-311041-[format_id].jpg"
+                    }
+                ],
+						"coordinates": {
+							"lat": 48.8641235,
+							"long": 2.3324614
+						},
+						"price": {
+							"values": {
+								"amount": 70.61
+							},
+							"description": "individual"
+						},
+						"categories": [
+							{
+								"category_id": 4,
+								"name": "Bus & Minivan Tours",
+								"parent_id": 2
+                    }
+                ],
+						"locations": [
+							{
+								"location_id": 16,
+								"type": "CITY",
+								"name": "Paris",
+								"english_name": "Paris",
+								"country": "FR",
+								"coordinates": {
+									"lat": 48.85693,
+									"long": 2.3412
+								},
+								"viewport": {
+									"sw_lat": 48.658291,
+									"sw_long": 2.08679,
+									"ne_lat": 49.04694,
+									"ne_long": 2.63791
+								}
+                    }
+                ],
+						"url": "http://www.getyourguide.com/paris-l16/skip-the-line-eiffel-tower-cruise-sightseeing-tour-t3383/",
+						"durations": [
+							{
+								"duration": 4,
+								"unit": "hour"
+                    }
+                ]
+            }
+        ]
 			}
-		});
+		};
+
+		var louvreData = {
+			"_metadata": {
+				"descriptor": "GetYourGuide AG",
+				"apiVersion": "1",
+				"method": "getTourByQueryAction",
+				"date": "2015-06-28T09:32:39Z",
+				"status": "OK",
+				"query": "cnt_language=en&currency=USD&q=Louvre",
+				"availableLanguages": [
+            "en",
+            "fr",
+            "de",
+            "it",
+            "ja",
+            "pt",
+            "ru",
+            "es",
+            "ko"
+        ],
+				"exchange": {
+					"rate": 0.8962318301,
+					"currency": "USD"
+				},
+				"totalCount": 28,
+				"limit": 10,
+				"offset": 0
+			},
+			"data": {
+				"tours": [
+					{
+						"tour_id": 52338,
+						"tour_code": "LOUGF",
+						"cond_language": [
+                    "en",
+                    "fr",
+                    "de",
+                    "it",
+                    "ja",
+                    "pt",
+                    "ru",
+                    "es"
+                ],
+						"title": "Paris: Louvre Museum Skip-the-Line Entrance Ticket",
+						"abstract": "Skip the long lines to the Louvre Museum in Paris, and enjoy more time to see the masterpieces of art in one of the world’s greatest museums. Save time on a self-guided tour of works of art such as the “Mona Lisa” and “Venus de Milo.”",
+						"bestseller": false,
+						"overall_rating": 4.1807,
+						"number_of_ratings": 83,
+						"pictures": [
+							{
+								"id": 329702,
+								"description": "Paris: Louvre Museum Skip-the-Line Entrance Ticket",
+								"url": "http://img-hackathon.getyourguide.com/img/tour_img-329702-[format_id].jpg",
+								"ssl_url": "https://img-hackathon.getyourguide.com/img/tour_img-329702-[format_id].jpg"
+                    }
+                ],
+						"coordinates": {
+							"lat": 48.863102,
+							"long": 2.336017
+						},
+						"price": {
+							"values": {
+								"amount": 33.02
+							},
+							"description": "individual"
+						},
+						"categories": [
+							{
+								"category_id": 133,
+								"name": "Museum Tickets",
+								"parent_id": 132
+                    }
+                ],
+						"locations": [
+							{
+								"location_id": 16,
+								"type": "CITY",
+								"name": "Paris",
+								"english_name": "Paris",
+								"country": "FR",
+								"coordinates": {
+									"lat": 48.85693,
+									"long": 2.3412
+								},
+								"viewport": {
+									"sw_lat": 48.658291,
+									"sw_long": 2.08679,
+									"ne_lat": 49.04694,
+									"ne_long": 2.63791
+								}
+                    }
+                ],
+						"url": "http://www.getyourguide.com/paris-l16/skip-the-line-louvre-museum-ticket-t52338/",
+						"durations": [
+							{
+								"duration": 1,
+								"unit": "day"
+                    },
+							{
+								"duration": 30,
+								"unit": "day"
+                    }
+                ]
+            },
+					{
+						"tour_id": 49288,
+						"tour_code": "LOUSGT",
+						"cond_language": [
+                    "es",
+                    "en",
+                    "fr",
+                    "de",
+                    "it",
+                    "ja",
+                    "ko",
+                    "pt",
+                    "ru"
+                ],
+						"title": "Skip the Line: Louvre Museum Ticket with Audio Guide",
+						"abstract": "See hundreds of art treasures on a skip-the-line self-guided tour of the Louvre Museum in Paris. Marvel at relics from antiquity to the early 19th century, including Da Vinci’s “Mona Lisa,” frescoes by Botticelli, early Renaissance paintings, and more.",
+						"bestseller": false,
+						"overall_rating": 3.816,
+						"number_of_ratings": 212,
+						"pictures": [
+							{
+								"id": 319445,
+								"url": "http://img-hackathon.getyourguide.com/img/tour_img-319445-[format_id].jpg",
+								"ssl_url": "https://img-hackathon.getyourguide.com/img/tour_img-319445-[format_id].jpg"
+                    }
+                ],
+						"coordinates": {
+							"lat": 48.8628496,
+							"long": 2.3364937
+						},
+						"price": {
+							"values": {
+								"amount": 36.45
+							},
+							"description": "individual"
+						},
+						"categories": [
+							{
+								"category_id": 3,
+								"name": "Walking Tours",
+								"parent_id": 2
+                    }
+                ],
+						"locations": [
+							{
+								"location_id": 16,
+								"type": "CITY",
+								"name": "Paris",
+								"english_name": "Paris",
+								"country": "FR",
+								"coordinates": {
+									"lat": 48.85693,
+									"long": 2.3412
+								},
+								"viewport": {
+									"sw_lat": 48.658291,
+									"sw_long": 2.08679,
+									"ne_lat": 49.04694,
+									"ne_long": 2.63791
+								}
+                    }
+                ],
+						"url": "http://www.getyourguide.com/paris-l16/paris-louvre-museum-skip-the-line-self-guided-tour-t49288/",
+						"durations": [
+							{
+								"duration": 2.45,
+								"unit": "hour"
+                    }
+                ]
+            }
+        ]
+			}
+		}
+
+		var louvreData = {
+			"_metadata": {
+				"descriptor": "GetYourGuide AG",
+				"apiVersion": "1",
+				"method": "getTourByQueryAction",
+				"date": "2015-06-28T09:59:58Z",
+				"status": "OK",
+				"query": "cnt_language=en&currency=GBP&q=louvre",
+				"availableLanguages": [
+            "en",
+            "fr",
+            "de",
+            "it",
+            "ja",
+            "pt",
+            "ru",
+            "es",
+            "ko"
+        ],
+				"exchange": {
+					"rate": 1.3867403269,
+					"currency": "GBP"
+				},
+				"totalCount": 28,
+				"limit": 10,
+				"offset": 0
+			},
+			"data": {
+				"tours": [
+					{
+						"tour_id": 52338,
+						"tour_code": "LOUGF",
+						"cond_language": [
+                    "en",
+                    "fr",
+                    "de",
+                    "it",
+                    "ja",
+                    "pt",
+                    "ru",
+                    "es"
+                ],
+						"title": "Paris: Louvre Museum Skip-the-Line Entrance Ticket",
+						"abstract": "Skip the long lines to the Louvre Museum in Paris, and enjoy more time to see the masterpieces of art in one of the world's greatest museums. Save time on a self-guided tour of works of art such as the 'Mona Lisa' and 'Venus de Milo.'",
+						"bestseller": false,
+						"overall_rating": 4.1807,
+						"number_of_ratings": 83,
+						"pictures": [
+							{
+								"id": 329702,
+								"description": "Paris: Louvre Museum Skip-the-Line Entrance Ticket",
+								"url": "http://img-hackathon.getyourguide.com/img/tour_img-329702-[format_id].jpg",
+								"ssl_url": "https://img-hackathon.getyourguide.com/img/tour_img-329702-[format_id].jpg"
+                    }
+                ],
+						"coordinates": {
+							"lat": 48.863102,
+							"long": 2.336017
+						},
+						"price": {
+							"values": {
+								"amount": 21.31
+							},
+							"description": "individual"
+						},
+						"categories": [
+							{
+								"category_id": 133,
+								"name": "Museum Tickets",
+								"parent_id": 132
+                    }
+                ],
+						"locations": [
+							{
+								"location_id": 16,
+								"type": "CITY",
+								"name": "Paris",
+								"english_name": "Paris",
+								"country": "FR",
+								"coordinates": {
+									"lat": 48.85693,
+									"long": 2.3412
+								},
+								"viewport": {
+									"sw_lat": 48.658291,
+									"sw_long": 2.08679,
+									"ne_lat": 49.04694,
+									"ne_long": 2.63791
+								}
+                    }
+                ],
+						"url": "http://www.getyourguide.com/paris-l16/skip-the-line-louvre-museum-ticket-t52338/",
+						"durations": [
+							{
+								"duration": 1,
+								"unit": "day"
+                    },
+							{
+								"duration": 30,
+								"unit": "day"
+                    }
+                ]
+            }
+					]
+			}
+		}
+
+		var disneylandData = {
+			"_metadata": {
+				"descriptor": "GetYourGuide AG",
+				"apiVersion": "1",
+				"method": "getTourByQueryAction",
+				"date": "2015-06-28T10:04:09Z",
+				"status": "OK",
+				"query": "cnt_language=en&currency=GBP&q=disneyland",
+				"availableLanguages": [
+            "es",
+            "en",
+            "fr",
+            "zh",
+            "de",
+            "it",
+            "pt",
+            "ru"
+        ],
+				"exchange": {
+					"rate": 1.3867403269,
+					"currency": "GBP"
+				},
+				"totalCount": 9,
+				"limit": 10,
+				"offset": 0
+			},
+			"data": {
+				"tours": [
+					{
+						"tour_id": 19562,
+						"tour_code": "tour19562",
+						"cond_language": [],
+						"title": "Disneyland Paris Tickets",
+						"abstract": "Enjoy a magical time at Disneyland® Park, or get a 2-park ticket to visit Walt Disney Studios Park as well! Meet all your favorite Disney characters and see the world of Disney just as you remember it from films!",
+						"bestseller": false,
+						"overall_rating": 4.4759,
+						"number_of_ratings": 145,
+						"pictures": [
+							{
+								"id": 296728,
+								"url": "http://img-hackathon.getyourguide.com/img/tour_img-296728-[format_id].jpg",
+								"ssl_url": "https://img-hackathon.getyourguide.com/img/tour_img-296728-[format_id].jpg"
+                    }
+                ],
+						"coordinates": {
+							"lat": 48.8557,
+							"long": 2.79877
+						},
+						"price": {
+							"values": {
+								"amount": 50.73
+							},
+							"description": "individual"
+						},
+						"categories": [
+							{
+								"category_id": 131,
+								"name": "Theme Parks & Amusement Parks",
+								"parent_id": 123
+                    }
+                ],
+						"locations": [
+							{
+								"location_id": 16,
+								"type": "CITY",
+								"name": "Paris",
+								"english_name": "Paris",
+								"country": "FR",
+								"coordinates": {
+									"lat": 48.85693,
+									"long": 2.3412
+								},
+								"viewport": {
+									"sw_lat": 48.658291,
+									"sw_long": 2.08679,
+									"ne_lat": 49.04694,
+									"ne_long": 2.63791
+								}
+                    }
+                ],
+						"url": "http://www.getyourguide.com/paris-l16/disneyland-paris-2-parks-ticket-1-2-3-4-5-day-t19562/",
+						"durations": [
+							{
+								"duration": 10,
+								"unit": "hour"
+                    },
+							{
+								"duration": 4,
+								"unit": "day"
+                    }
+                ]
+            }
+        ]
+			}
+		}
+
+		$('.eiffelTourName').html(eiffelTowerData.data.tours[0].title);
+		$('.eiffelTourDesc').html(eiffelTowerData.data.tours[0].abstract);
+		$('.eiffelTourPrice').html('&#163;' + eiffelTowerData.data.tours[0].price.values.amount);
+
+		$('.louvreTourName').html(louvreData.data.tours[0].title);
+		$('.louvreTourDesc').html(louvreData.data.tours[0].abstract);
+		$('.louvreTourPrice').html('&#163;' + louvreData.data.tours[0].price.values.amount);
+		
+		$('.disneyTourName').html(disneylandData.data.tours[0].title);
+		$('.disneyTourDesc').html(disneylandData.data.tours[0].abstract);
+		$('.disneyTourPrice').html('&#163;' + disneylandData.data.tours[0].price.values.amount);
 	</script>
 </body>
 
